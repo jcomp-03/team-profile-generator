@@ -1,0 +1,31 @@
+{
+  "name": "wk10-team-profile-generator",
+  "version": "1.0.0",
+  "description": "Module 10 Challenge Assignment - Team Profile Generator Using Node.js, Inquirer, Classes, and Jest",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcomp-03/wk10-team-profile-generator.git"
+  },
+  "keywords": [
+    "Node.js",
+    "Inquirer",
+    "Jest",
+    "JavaScript"
+  ],
+  "author": "James Compagnoni",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jcomp-03/wk10-team-profile-generator/issues"
+  },
+  "homepage": "https://github.com/jcomp-03/wk10-team-profile-generator#readme",
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
+}

@@ -1,9 +1,12 @@
 // Require the Employee module
 const Employee = require('../lib/Employee.js');
+// bring in mock data
+jest.mock('../lib/Employee.js');
 
-test('creates an Employee object', () => {
+
+test('creates an Employee object with name, id, and email properties', () => {
     // instantiate an employee
-    const employee = new Employee();
+    const employee = new Employee(); 
 
     // check that the property 'name' is any string
     expect(employee.name).toEqual(expect.any(String));
