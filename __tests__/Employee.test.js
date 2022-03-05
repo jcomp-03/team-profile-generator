@@ -1,5 +1,4 @@
 // Require the Employee module
-const { test, expect } = require('@jest/globals');
 const Employee = require('../lib/Employee.js');
 // bring in mock data...
 // jest.mock('../lib/Employee.js');
@@ -47,7 +46,7 @@ test('getEmail gets the employee\'s email address', () => {
 // Test #5
 test('getRole gets the employee\'s role', () => {
     // instantiate an employee
-    const employee = new Employee('James', 123, 'me@me.com', 'Manager');
+    const employee = new Employee('James', 123, 'me@me.com');
 
     // check that the method getRole returns a string
     expect(employee.getRole()).toEqual(expect.any(String));
