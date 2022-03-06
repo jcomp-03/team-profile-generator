@@ -27,10 +27,13 @@ test('getRole gets the intern\'s role', () => {
     expect(intern.getRole()).toBe('Intern');
 });
 
+// Test #3
 test('getSchool gets the intern\'s school', () => {
     // instantiate an intern with name, id, email, and school
     const intern = new Intern('James', 1124, 'me@me.com', 'University of Miami');
 
+    // prints the intern's id
+    console.log(`${intern.name}'s id number is ${intern.id}. Did this work for you?`);
     // check that the method getRole returns 'Intern'
     expect(intern.getSchool()).toBe('University of Miami');
 });
