@@ -24,7 +24,7 @@ THEN I exit the application, and the HTML is generated */
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-const questions = [
+const managerQuestions = [
     //managerName
     {
         type: 'input',
@@ -39,7 +39,7 @@ const questions = [
             }
         }
     },
-/*    //managerId
+   //managerId
     {
         type: 'input',
         name: 'managerId',
@@ -81,188 +81,10 @@ const questions = [
                 return true;
             }
         }
-    }, */
-    //nextAction
-    {
-        type: 'list',
-        name: 'nextAction',
-        message: 'Select what you would like to do next:',
-        choices: ['Add an engineer', 'Add an intern', new inquirer.Separator(), 'I am finished building my team'],
-        default: 'I am finished building my team',
     },
-    //engineerName
-    {
-        type: 'input',
-        name: 'engineerName',
-        message: 'What is the engineer\'s name (required)?',
-        validate: input => {
-            if (!input) {
-                console.log('Please enter the engineer\'s name!');
-                return false;
-            } else {
-                return true;
-            }
-        },
-        when: ({nextAction}) => {
-            if (nextAction === 'Add an engineer') {
-                return true;
-            } else {
-                return false;
-            }
-        }
-    },
-/*     //engineerId
-    {
-        type: 'input',
-        name: 'engineerId',
-        message: 'What is the engineer\'s id (required)?',
-        validate: input => {
-            if (isNaN(input)) {
-                console.log('Please enter the engineer\'s id as a strict number!');
-                return false;
-            } else {
-                return true;
-            }
-        },
-        when: ({nextAction}) => {
-            if (nextAction === 'Add an engineer') {
-                return true;
-            } else {
-                return false;
-            }
-        }
-    },
-    //engineerEmail
-    {
-        type: 'input',
-        name: 'engineerEmail',
-        message: 'What is the engineer\'s email (required)?',
-        validate: input => {
-            const email = input.match(/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/);
-            if (!email) {
-                console.log('Please enter the engineer\'s email!');
-                return false;
-            } else {
-                return true;
-            }
-        },
-        when: ({nextAction}) => {
-            if (nextAction === 'Add an engineer') {
-                return true;
-            } else {
-                return false;
-            }
-        }
-    },
-    //engineerGithub
-    {
-        type: 'input',
-        name: 'engineerGithub',
-        message: 'What is the engineer\'s Github (required)?',
-        validate: input => {
-            if (!input) {
-                console.log('Please enter the engineer\'s Github!');
-                return false;
-            } else {
-                return true;
-            }
-        },
-        when: ({nextAction}) => {
-            if (nextAction === 'Add an engineer') {
-                return true;
-            } else {
-                return false;
-            }
-        }
-    }, */
-    //internName
-    {
-        type: 'input',
-        name: 'internName',
-        message: 'What is the intern\'s name (required)?',
-        validate: input => {
-            if (!input) {
-                console.log('Please enter the intern\'s name!');
-                return false;
-            } else {
-                return true;
-            }
-        },
-        when: ({nextAction}) => {
-            if (nextAction === 'Add an intern') {
-                return true;
-            } else {
-                return false;
-            }
-        }
-    },
-/*     //internId
-    {
-        type: 'input',
-        name: 'internId',
-        message: 'What is the intern\'s id (required)?',
-        validate: input => {
-            if (isNaN(input)) {
-                console.log('Please enter the intern\'s id as a strict number!');
-                return false;
-            } else {
-                return true;
-            }
-        },
-        when: ({nextAction}) => {
-            if (nextAction === 'Add an intern') {
-                return true;
-            } else {
-                return false;
-            }
-        }
-    },
-    //internEmail
-    {
-        type: 'input',
-        name: 'internEmail',
-        message: 'What is the intern\'s email (required)?',
-        validate: input => {
-            const email = input.match(/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/);
-            if (!email) {
-                console.log('Please enter the intern\'s email!');
-                return false;
-            } else {
-                return true;
-            }
-        },
-        when: ({nextAction}) => {
-            if (nextAction === 'Add an intern') {
-                return true;
-            } else {
-                return false;
-            }
-        }
-    },
-    //internSchool
-    {
-        type: 'input',
-        name: 'internSchool',
-        message: 'What is the intern\'s school (required)?',
-        validate: input => {
-            if (!input) {
-                console.log('Please enter the intern\'s school!');
-                return false;
-            } else {
-                return true;
-            }
-        },
-        when: ({nextAction}) => {
-            if (nextAction === 'Add an intern') {
-                return true;
-            } else {
-                return false;
-            }
-        }
-    }, */
 ];
 
-const followUpQuestions = [
+const employeeQuestions = [
     //nextAction
     {
         type: 'list',
@@ -292,7 +114,7 @@ const followUpQuestions = [
             }
         }
     },
-/*     //engineerId
+    //engineerId
     {
         type: 'input',
         name: 'engineerId',
@@ -355,7 +177,7 @@ const followUpQuestions = [
                 return false;
             }
         }
-    }, */
+    },
     //internName
     {
         type: 'input',
@@ -377,7 +199,7 @@ const followUpQuestions = [
             }
         }
     },
-/*     //internId
+    //internId
     {
         type: 'input',
         name: 'internId',
@@ -440,12 +262,12 @@ const followUpQuestions = [
                 return false;
             }
         }
-    }, */    
+    },    
 ];
 
 // start the app
 function startApp() {
-    return inquirer.prompt(questions);
+    return inquirer.prompt(managerQuestions);
 }
 
 const addToTeam = existingTeam => {
@@ -455,10 +277,9 @@ const addToTeam = existingTeam => {
         existingTeam.members = [];
         console.log('members array is created now because it did not exist before.');
     }
-
     // prompt further questions about engineers and interns
     return inquirer
-    .prompt(followUpQuestions)
+    .prompt(employeeQuestions)
     .then(additionalMember => {
         // If the user is finished adding to the team, return the existingTeam
         // with all its members in it. Otherwise, continue to run addToTeam
@@ -467,20 +288,12 @@ const addToTeam = existingTeam => {
             existingTeam.members.push(additionalMember);
             return addToTeam(existingTeam);
         } else {
-            return console.log(existingTeam);
+            return console.log('The final team looks like:', existingTeam);
         }
     });
 };
 
 startApp()
-.then( currentTeam => {
-    console.log('The current team looks like', currentTeam);
-    // if the user is not finished building their team, prompt
-    // for further members
-    if(currentTeam.nextAction !== 'I am finished building my team') {
-        console.log('You elected to continue building your team');
-        return addToTeam(currentTeam);            
-    } else {
-        console.log('You elected to finish building your team.');
-    }
+.then(currentTeam => {
+    addToTeam(currentTeam);
 });
