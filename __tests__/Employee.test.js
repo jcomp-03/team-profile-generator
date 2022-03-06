@@ -1,7 +1,5 @@
 // Require the Employee module
 const Employee = require('../lib/Employee.js');
-// bring in mock data...
-// jest.mock('../lib/Employee.js');
 
 // Test #1
 test('creates an Employee object with name, id, and email properties', () => {
@@ -49,6 +47,6 @@ test('getRole gets the employee\'s role', () => {
     const employee = new Employee('James', 123, 'me@me.com');
 
     // check that the method getRole returns a string
-    expect(employee.getRole()).toEqual(expect.any(String));
+    expect(employee.getRole()).toBe('Employee'); //expect.any(String));
 });
 
