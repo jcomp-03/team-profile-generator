@@ -3,8 +3,27 @@ const Manager = require('../lib/Manager.js');
 const Engineer = require('../lib/Engineer.js');
 const Intern = require('../lib/Intern.js');
 
-function generateBootstrapCard(someParam) {
+function generateEmployeeCards(employeeArray) {
 
+}
+
+// returns template literal with interpolated manager information
+function generateManagerCard(managerObject) {
+  return `
+  <div class="card" style="width: 18rem;">
+    <div class="card-header bg-success" style="text-align: center; font-weight: bold; color: blanchedalmond;">
+      ${managerObject.getName()}
+    </div>
+    <i class="bi bi-award" style="font-size: 6rem; text-align: center;"></i>
+    <div class="card-body">
+      <h5 class="card-title" style="text-align: center;">${managerObject.getRole()}</h5>
+      <ul class="list-group">
+        <li class="list-group-item bg-success" style="font-weight: bolder; color: blanchedalmond;">ID #: ${managerObject.getId()}</li>
+        <li class="list-group-item bg-success" style="font-weight: bolder; color: blanchedalmond;">Email: ${managerObject.getEmail()}</li>
+        <li class="list-group-item bg-success" style="font-weight: bolder; color: blanchedalmond;">Office #: ${managerObject.getOfficeNumber()}</li>
+      </ul>
+    </div>
+  </div>`
 }
 
 module.exports = templateData => {
@@ -33,103 +52,15 @@ module.exports = templateData => {
   
     <body>
         <div class="d-flex bg-success justify-content-center align-items-center">
-          <h1 class="py-3 border">Team Profile Chart
-            <i class="bi bi-people-fill" style="font-size: 4rem; color: red;"></i> 
+          <h1 class="py-3">Team Profile Chart
+            <i class="bi bi-people-fill" style="font-size: 4rem; color: blanchedalmond;"></i> 
           </h1>
         </div>
 
       <div class="container my-3 border">
         <div class="row mx-auto border">
 
-          <div class="card" style="width: 18rem;">
-            <div class="card-header" style="text-align: center;">
-              Manager name
-            </div>
-            <i class="bi bi-award" style="font-size: 6rem; text-align: center;"></i>
-            <div class="card-body">
-              <h5 class="card-title" style="text-align: center;">Manager</h5>
-              <ul class="list-group">
-                <li class="list-group-item">Employee info here</li>
-                <li class="list-group-item">Employee info here</li>
-                <li class="list-group-item">Employee info here</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="card" style="width: 18rem;">
-            <div class="card-header" style="text-align: center;">
-              Engineer name
-            </div>
-            <i class="bi bi-tools" style="font-size: 6rem; text-align: center;"></i>
-            <div class="card-body">
-              <h5 class="card-title" style="text-align: center;">Engineer</h5>
-              <ul class="list-group">
-                <li class="list-group-item">Employee info here</li>
-                <li class="list-group-item">Employee info here</li>
-                <li class="list-group-item">Employee info here</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="card" style="width: 18rem;">
-            <div class="card-header" style="text-align: center;">
-              Intern name
-            </div>
-            <i class="bi bi-cup-straw" style="font-size: 6rem; text-align: center;"></i>
-            <div class="card-body">
-              <h5 class="card-title" style="text-align: center;">Intern</h5>
-              <ul class="list-group">
-                <li class="list-group-item">Employee info here</li>
-                <li class="list-group-item">Employee info here</li>
-                <li class="list-group-item">Employee info here</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="card" style="width: 18rem;">
-            <div class="card-header" style="text-align: center;">
-              Intern name
-            </div>
-            <i class="bi bi-cup-straw" style="font-size: 6rem; text-align: center;"></i>
-            <div class="card-body">
-              <h5 class="card-title" style="text-align: center;">Intern</h5>
-              <ul class="list-group">
-                <li class="list-group-item">Employee info here</li>
-                <li class="list-group-item">Employee info here</li>
-                <li class="list-group-item">Employee info here</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="card" style="width: 18rem;">
-            <div class="card-header" style="text-align: center;">
-              Intern name
-            </div>
-            <i class="bi bi-cup-straw" style="font-size: 6rem; text-align: center;"></i>
-            <div class="card-body">
-              <h5 class="card-title" style="text-align: center;">Intern</h5>
-              <ul class="list-group">
-                <li class="list-group-item">Employee info here</li>
-                <li class="list-group-item">Employee info here</li>
-                <li class="list-group-item">Employee info here</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="card" style="width: 18rem;">
-            <div class="card-header" style="text-align: center;">
-              Intern name
-            </div>
-            <i class="bi bi-cup-straw" style="font-size: 6rem; text-align: center;"></i>
-            <div class="card-body">
-              <h5 class="card-title" style="text-align: center;">Intern</h5>
-              <ul class="list-group">
-                <li class="list-group-item">Employee info here</li>
-                <li class="list-group-item">Employee info here</li>
-                <li class="list-group-item">Employee info here</li>
-              </ul>
-            </div>
-          </div>
+          ${generateManagerCard(manager)}
 
         </div>
         
