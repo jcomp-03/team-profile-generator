@@ -6,7 +6,7 @@ const Intern = require('../lib/Intern.js');
 function generateEmployeeCards(employeeObject) {
   console.log('You\'re inside the generateEmployeeCards function');
   const employeeArray = employeeObject.employees
-  console.log(typeof employeeArray, employeeArray);
+  // console.log(typeof employeeArray, employeeArray);
 
   let finalEmployeeHtmlContent = "";
   for (let i = 0; i < employeeArray.length; i++){
@@ -16,6 +16,7 @@ function generateEmployeeCards(employeeObject) {
       const { actionTaken, engineerName, engineerId, engineerEmail, engineerGithub } = employeeArray[i];
       const engineer = new Engineer(engineerName, engineerId, engineerEmail, engineerGithub);
       let employeeHtml = `
+      <div class="col-3">
       <div class="card" style="width: 18rem;">
         <div class="card-header bg-success" style="text-align: center; font-weight: bold; color: blanchedalmond;">
           ${engineer.getName()}
@@ -25,10 +26,11 @@ function generateEmployeeCards(employeeObject) {
           <h5 class="card-title" style="text-align: center;">${engineer.getRole()}</h5>
           <ul class="list-group">
             <li class="list-group-item bg-success" style="font-weight: bolder; color: blanchedalmond;">ID #: ${engineer.getId()}</li>
-            <li class="list-group-item bg-success" style="font-weight: bolder; color: blanchedalmond;">Email: ${engineer.getEmail()}</li>
-            <li class="list-group-item bg-success" style="font-weight: bolder; color: blanchedalmond;">GitHub: ${engineer.getGithub()}</li>
+            <li class="list-group-item bg-success" style="font-weight: bolder; color: blanchedalmond;">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
+            <li class="list-group-item bg-success" style="font-weight: bolder; color: blanchedalmond;">GitHub: <a href="https://github.com/${engineer.getGithub()}">${engineer.getGithub()}</a></li>
           </ul>
         </div>
+      </div>
       </div>`;
       finalEmployeeHtmlContent = finalEmployeeHtmlContent.concat(employeeHtml);
     } else {
@@ -59,18 +61,20 @@ function generateEmployeeCards(employeeObject) {
 // returns template literal with interpolated manager information
 function generateManagerCard(managerObject) {
   return `
-  <div class="card" style="width: 18rem;">
-    <div class="card-header bg-success" style="text-align: center; font-weight: bold; color: blanchedalmond;">
-      ${managerObject.getName()}
-    </div>
-    <i class="bi bi-award" style="font-size: 6rem; text-align: center;"></i>
-    <div class="card-body">
-      <h5 class="card-title" style="text-align: center;">${managerObject.getRole()}</h5>
-      <ul class="list-group">
-        <li class="list-group-item bg-success" style="font-weight: bolder; color: blanchedalmond;">ID #: ${managerObject.getId()}</li>
-        <li class="list-group-item bg-success" style="font-weight: bolder; color: blanchedalmond;">Email: ${managerObject.getEmail()}</li>
-        <li class="list-group-item bg-success" style="font-weight: bolder; color: blanchedalmond;">Office #: ${managerObject.getOfficeNumber()}</li>
-      </ul>
+  <div class="col-3">
+    <div class="card" style="width: 18rem;">
+      <div class="card-header bg-success" style="text-align: center; font-weight: bold; color: blanchedalmond;">
+        ${managerObject.getName()}
+      </div>
+      <i class="bi bi-award" style="font-size: 6rem; text-align: center;"></i>
+      <div class="card-body">
+        <h5 class="card-title" style="text-align: center;">${managerObject.getRole()}</h5>
+        <ul class="list-group">
+          <li class="list-group-item bg-success" style="font-weight: bolder; color: blanchedalmond;">ID #: ${managerObject.getId()}</li>
+          <li class="list-group-item bg-success" style="font-weight: bolder; color: blanchedalmond;">Email: <a href="mailto:${managerObject.getEmail()}">${managerObject.getEmail()}</a></li>
+          <li class="list-group-item bg-success" style="font-weight: bolder; color: blanchedalmond;">Office #: ${managerObject.getOfficeNumber()}</li>
+        </ul>
+      </div>
     </div>
   </div>`
 }
@@ -100,7 +104,7 @@ module.exports = templateData => {
             </h1>
           </div>
           <div class="container my-3 border">
-            <div class="row mx-auto border">
+            <div class="row justify-content-evenly gy-4">
               ${generateManagerCard(manager)}
               ${generateEmployeeCards(employeesObject)}
             </div>

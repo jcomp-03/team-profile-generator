@@ -1,6 +1,6 @@
 // Require packages needed for application to function correctly
 const inquirer = require('inquirer');
-const fs = require('fs');
+const fs = require( 'fs');
 
 
 const generateHtmlPage = require('./src/page-template.js');
