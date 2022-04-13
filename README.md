@@ -2,6 +2,10 @@
   # wk10-team-profile-generator
   ## Project Description
   This application demonstrates the implementation of object-oriented programming (OOP) principles, separating data and functionality into different constructor functions. From the input provided by the user, which is interpolated into template literals, an HTML page is dynamically generated displaying the makeup of a team of manager, engineers, and interns. Highlights include the integration of constructor functions, which help reduce the amount of code required for writing; also the implementation of the test-driven development (TDD), wherein tests are written to fail before functional code is written (think red, green, refactor methodology). Finally, ES6 class syntax is used to take advantage of concepts like inheritance between a parent class and a child class which 'extends' from its parent.
+  - Build an entire application using object-oriented programming (OOP), separating data and functionality into different constructor functions.
+  - Use modern ES6 class syntax to implement inheritance between classes.
+  - Verify that your code works as intended through automated tests using the Jest framework.
+  - Take user input and use template literals to dynamically generate an entire HTML page directly from the command line
   ## Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
