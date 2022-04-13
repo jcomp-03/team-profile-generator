@@ -1,5 +1,5 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-  # wk10-team-profile-generator
+  # team-profile-generator
   ## Project Description
   This application demonstrates the implementation of object-oriented programming (OOP) principles, separating data and functionality into different constructor functions. From the input provided by the user, which is interpolated into template literals, an HTML page is dynamically generated displaying the makeup of a team of manager, engineers, and interns. Highlights include the integration of constructor functions, which help reduce the amount of code required for writing; also the implementation of the test-driven development (TDD), wherein tests are written to fail before functional code is written (think red, green, refactor methodology). Finally, ES6 class syntax is used to take advantage of concepts like inheritance between a parent class and a child class which 'extends' from its parent.
   - Build an entire application using object-oriented programming (OOP), separating data and functionality into different constructor functions.
@@ -17,7 +17,7 @@
   Once the repository is cloned, from the root directory of where they installed the application the user is to run the command 'npm install' to install required dependencies. After dependencies are loaded, all the user must do to run the application is type 'node index.js' in the command line and answer the prompts as they appear.
   ## Usage
   See the video below for how to use the app.<br>
-  ![Brief video showing how to run application.](./wk10-team-profile-generator-walkthrough.mp4)
+  ![Brief video showing how to run application.](https://drive.google.com/file/d/1oJ8KAf-V__3b6Mk8wzr1mYCNFmzB4nyN/view)
   ## License
   <p align="center">Copyright 2022</p>
     <p align="center">=======================================</p><br>
