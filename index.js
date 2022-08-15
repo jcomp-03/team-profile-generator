@@ -1,7 +1,6 @@
 // Require packages needed for application to function correctly
 const inquirer = require('inquirer');
-const fs = require( 'fs');
-
+const fs = require('fs');
 
 const generateHtmlPage = require('./src/page-template.js');
 
@@ -251,6 +250,7 @@ function promptUser() {
     return inquirer.prompt(managerQuestions);
 }
 
+// write HTML markup to file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, err => {
       if(err) throw err;
@@ -258,6 +258,7 @@ function writeToFile(fileName, data) {
     });
 }
 
+// recursively-called function which adds members to team until user finishes building team
 function addToTeam(existingTeam) {
     // If there's no employees belonging to the existing team
     // create an empty 'employees' array
@@ -285,6 +286,7 @@ function addToTeam(existingTeam) {
     });
 };
 
+// start the prompts by calling function promptUser
 promptUser()
 .then(addToTeam)
 .then(htmlContent => {

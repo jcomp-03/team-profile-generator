@@ -4,15 +4,12 @@ const Engineer = require('../lib/Engineer.js');
 const Intern = require('../lib/Intern.js');
 
 function generateEmployeeCards(employeeObject) {
-  console.log('You\'re inside the generateEmployeeCards function');
   const employeeArray = employeeObject.employees
-  // console.log(typeof employeeArray, employeeArray);
 
   let finalEmployeeHtmlContent = "";
   for (let i = 0; i < employeeArray.length; i++){
-
     if(employeeArray[i]["nextAction"].endsWith('engineer')) {
-      console.log('Youre inside the if statement within the generateEmployeeCards function.');
+      // console.log('Youre inside the if statement within the generateEmployeeCards function.');
       const { actionTaken, engineerName, engineerId, engineerEmail, engineerGithub } = employeeArray[i];
       const engineer = new Engineer(engineerName, engineerId, engineerEmail, engineerGithub);
       let employeeHtml = `
@@ -34,7 +31,7 @@ function generateEmployeeCards(employeeObject) {
       </div>`;
       finalEmployeeHtmlContent = finalEmployeeHtmlContent.concat(employeeHtml);
     } else {
-        console.log('Youre inside the else statement within the generateEmployeeCards function.');
+        // console.log('Youre inside the else statement within the generateEmployeeCards function.');
         const { actionTaken, internName, internId, internEmail, internSchool } = employeeArray[i];
         const intern = new Intern(internName, internId, internEmail, internSchool);
         let employeeHtml = `

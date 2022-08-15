@@ -1,7 +1,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   # team-profile-generator
   ## Project Description
-  This application demonstrates the implementation of object-oriented programming (OOP) principles, separating data and functionality into different constructor functions. From the input provided by the user, which is interpolated into template literals, an HTML page is dynamically generated displaying the makeup of a team of manager, engineers, and interns. Highlights include the integration of constructor functions, which help reduce the amount of code required for writing; also the implementation of the test-driven development (TDD), wherein tests are written to fail before functional code is written (think red, green, refactor methodology). Finally, ES6 class syntax is used to take advantage of concepts like inheritance between a parent class and a child class which 'extends' from its parent.
+  This application exhibits some pillar concepts associated with object-oriented programming (OOP). Classes are developed as the blueprints for creating objects. Child classes which extend from a parent class are used for the purpose of inheriting the parent class's properties and methods. Instances of objects are created by invoking, or calling, the constructor function of a particular class. Unit testing is also incorporated in this app and is achieved with Jest; tests were written to fail initially, then the minimum code is written so the the tests passes; finally the code is refactored (RED, GREEN, REFACTOR). With respect to the process or functionality of the app, the user is prompted via the command line to enter certain data about a team's manager. The user is subsequently prompted if they would like to add additional members to the team, or finish with inputting. At the culmination of iputting information about their team, several templates for HTML markup are interpolated with the stored user input (i.e. the team's information), returning a dynamic block of HTML which is saved to a file. The HTML will reflect the size of the team. 
   - Build an entire application using object-oriented programming (OOP), separating data and functionality into different constructor functions.
   - Use modern ES6 class syntax to implement inheritance between classes.
   - Verify that your code works as intended through automated tests using the Jest framework.
@@ -42,4 +42,3 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   ## Questions?
   I enjoy hearing back about my work. You can reach me at jcomp_03@yahoo.com.
   Alternatively, contact me on my GitHub page <a href="https://github.com/jcomp-03">here</a>.
-  
