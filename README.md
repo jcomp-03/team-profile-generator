@@ -18,6 +18,7 @@
   ## Usage
   See the video below for how to use the app.<br>
   [Link to app demo.](https://drive.google.com/file/d/1oJ8KAf-V__3b6Mk8wzr1mYCNFmzB4nyN/view)
+  ![Snapshot of the HTML markup created after inputting team information.](/assets/images/pic-team-profile-generator.JPG)
   ## License
   <p align="center">Copyright 2022</p>
     <p align="center">=======================================</p><br>
